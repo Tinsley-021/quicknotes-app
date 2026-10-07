@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+  color: #222;
+}
+
+header {
+  background: #176b87;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p {
+  margin: 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+#note-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#note-form input,
+#note-form select {
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#note-form input {
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #176b87;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0f4e63;
+}
+
+#error-message {
+  color: red;
+  min-height: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+#notes-list {
+  padding: 0;
+  margin: 0;
+}
+
+.note-card {
+  list-style: none;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.note-card p {
+  margin: 8px 0;
+}
+
+.note-text {
+  font-size: 16px;
+}
+
+.note-date {
+  color: #777;
+  font-size: 13px;
+}
+
+.category-label {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.category-personal {
+  border-left: 5px solid teal;
+}
+
+.category-personal .category-label {
+  background: #d9f3f0;
+  color: teal;
+}
+
+.category-work {
+  border-left: 5px solid darkred;
+}
+
+.category-work .category-label {
+  background: #f4dcdc;
+  color: darkred;
+}
+
+.category-study {
+  border-left: 5px solid blue;
+}
+
+.category-study .category-label {
+  background: #dce8ff;
+  color: blue;
+}
+
+.delete-btn {
+  background: #b3261e;
+  margin-top: 5px;
+}
+
+.delete-btn:hover {
+  background: #861c17;
+}
+
+#clear-all {
+  background: #555;
+  margin-top: 10px;
+}
+
+#clear-all:hover {
+  background: #333;
+}
+
+.empty-message {
+  list-style: none;
+  color: #777;
+  padding: 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #note-form input,
+  #note-form select,
+  #note-form button {
+    width: 100%;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+}
