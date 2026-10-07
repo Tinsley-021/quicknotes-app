@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuickNotes</title>
 
-  <link rel="stylesheet" href="quicknotes-app_style.css">
-  <script src="quicknotes-app_script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -24,14 +24,15 @@
       <form id="note-form">
 
         <label for="note-input">Note</label>
+
         <input
           type="text"
           id="note-input"
           placeholder="Write your note..."
-          maxlength="200"
         >
 
         <label for="note-category">Category</label>
+
         <select id="note-category">
           <option value="Personal">Personal</option>
           <option value="Work">Work</option>
@@ -44,7 +45,6 @@
 
       <p id="error-message"></p>
     </section>
-
 
     <section class="notes-section">
       <h2>Your notes</h2>
@@ -63,7 +63,6 @@
     </section>
 
   </main>
-
 
   <footer>
     <p>QuickNotes &copy; 2026</p>
