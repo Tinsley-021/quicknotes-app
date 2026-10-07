@@ -19,7 +19,18 @@ function saveNotes() {
   localStorage.setItem("quicknotes", JSON.stringify(notes));
 }
 
+function updateCount() {
+  if (notes.length === 0) {
+    noteCount.textContent = "You have no notes yet.";
+  } else if (notes.length === 1) {
+    noteCount.textContent = "You have 1 note.";
+  } else {
+    noteCount.textContent = `You have ${notes.length} notes.`;
+  }
+}
+
 function render(searchText = "") {
+
   notesList.textContent = "";
 
   const search = searchText.toLowerCase().trim();
@@ -91,17 +102,6 @@ function render(searchText = "") {
   updateCount();
 }
 
-function updateCount() {
-
-  if (notes.length === 0) {
-    noteCount.textContent = "You have no notes yet.";
-  } else if (notes.length === 1) {
-    noteCount.textContent = "You have 1 note.";
-  } else {
-    noteCount.textContent = `You have ${notes.length} notes.`;
-  }
-}
-
 noteForm.addEventListener("submit", function(event) {
 
   event.preventDefault();
@@ -132,12 +132,11 @@ noteForm.addEventListener("submit", function(event) {
 
   saveNotes();
 
-  render();
+  render(searchInput.value);
 
   noteInput.value = "";
   noteCategory.value = "Personal";
 });
-
 
 function deleteNote(id) {
 
@@ -150,11 +149,9 @@ function deleteNote(id) {
   render(searchInput.value);
 }
 
-
 searchInput.addEventListener("input", function() {
   render(searchInput.value);
 });
-
 
 clearAll.addEventListener("click", function() {
 
@@ -162,9 +159,8 @@ clearAll.addEventListener("click", function() {
     return;
   }
 
-  const answer = confirm("Delete all notes?");
+  if (confirm("Delete all notes?")) {
 
-  if (answer) {
     notes = [];
 
     saveNotes();
@@ -174,6 +170,5 @@ clearAll.addEventListener("click", function() {
     errorMessage.textContent = "";
   }
 });
-
 
 render();
